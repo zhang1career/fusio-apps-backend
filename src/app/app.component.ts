@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
   hasUrl: boolean = true;
   hasActiveInstance: boolean = false;
 
+  /** Reflects <html data-bs-theme>; switch on = dark */
+  darkMode = false;
+
   user?: BackendUser;
   menu = [{
     title: 'Account',
@@ -31,7 +34,20 @@ export class AppComponent implements OnInit {
     this.hasUrl = typeof FUSIO_URL !== 'undefined' && FUSIO_URL !== null && FUSIO_URL !== '';
     this.hasActiveInstance = InstanceManager.getActiveIndex() !== null;
 
+    this.darkMode = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+
     Config.fusio = this.fusio;
+  }
+
+  setDarkMode(on: boolean): void {
+    this.darkMode = on;
+    const mode = on ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-bs-theme', mode);
+    try {
+      localStorage.setItem('fusio-theme', mode);
+    } catch {
+      /* private mode */
+    }
   }
 
 }

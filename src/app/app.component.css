@@ -1,0 +1,32 @@
+.fusio-header-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  float: right;
+  margin-top: 2px;
+}
+
+.fusio-theme-switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  min-height: 1.5rem;
+}
+
+.fusio-theme-switch .form-check-input {
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.fusio-theme-switch-label {
+  margin-left: 0.35rem;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+}
+
+.fusio-theme-switch-label .bi {
+  font-size: 1.15rem;
+  vertical-align: middle;
+}
