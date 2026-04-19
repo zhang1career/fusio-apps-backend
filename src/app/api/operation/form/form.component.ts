@@ -20,6 +20,12 @@ export class FormComponent extends Form<BackendOperation> {
     {key: 3, value: 'Legacy'}
   ]
 
+  /** Matches fusio-impl: 0 = Fusio token/scopes, 1 = user-center JWT */
+  usabilities = [
+    {key: 0, value: 'Internal'},
+    {key: 1, value: 'External'},
+  ]
+
   methods = [
     {key: 'GET', value: 'GET'},
     {key: 'POST', value: 'POST'},

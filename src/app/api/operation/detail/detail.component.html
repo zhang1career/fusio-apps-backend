@@ -27,6 +27,13 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-lg-2 fw-bold">Usability</div>
+      <div class="col-lg-10">
+        <span *ngIf="selected.usability === 1" class="badge bg-dark fusio-operation-usability">External</span>
+        <span *ngIf="selected.usability !== 1" class="badge bg-secondary fusio-operation-usability">Internal</span>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-lg-2 fw-bold">Stability</div>
       <div class="col-lg-10">
         <span *ngIf="selected.stability === 0" class="badge bg-warning fusio-operation-stability">Deprecated</span>

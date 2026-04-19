@@ -1,0 +1,15 @@
+.fusio-operation-status-cell {
+  vertical-align: middle;
+}
+
+.fusio-operation-status-icons {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fusio-operation-status-icon {
+  font-size: 1.125rem;
+  line-height: 1;
+}

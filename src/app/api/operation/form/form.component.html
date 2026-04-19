@@ -43,6 +43,18 @@
     </div>
   </div>
   <div class="mb-3 row">
+    <label for="usability" class="col-lg-2 col-form-label fw-bold">Usability</label>
+    <div class="col-lg-10">
+      <div class="input-group">
+        <select id="usability" name="usability" [(ngModel)]="entity.usability" [disabled]="isDisabled()" class="form-select">
+          <option *ngFor="let u of usabilities" [ngValue]="u.key">{{u.value}}</option>
+        </select>
+        <button class="btn btn-outline-secondary" type="button" [ngbPopover]="usabilityHelp"><i class="bi bi-question"></i></button>
+        <ng-template #usabilityHelp>0 = validate with Fusio token and scopes (internal). 1 = validate Bearer token against the configured user center (external).</ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
     <label for="stability" class="col-lg-2 col-form-label fw-bold">Stability</label>
     <div class="col-lg-10">
       <div class="input-group">
