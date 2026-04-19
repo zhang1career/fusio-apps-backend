@@ -12,7 +12,7 @@
       <label for="url" class="col-lg-2 col-form-label fw-bold">Url</label>
       <div class="col-lg-10">
         <div class="input-group">
-          <input type="url" id="url" name="url" [(ngModel)]="instance.url" class="form-control">
+          <input type="url" id="url" name="url" [(ngModel)]="instance.url" class="form-control" autocomplete="url">
           <button class="btn btn-outline-secondary" type="button" [ngbPopover]="urlHelp"><i class="bi bi-question"></i></button>
           <ng-template #urlHelp>Url of the Fusio instance</ng-template>
         </div>
@@ -22,7 +22,7 @@
       <label for="username" class="col-lg-2 col-form-label fw-bold">Username</label>
       <div class="col-lg-10">
         <div class="input-group">
-          <input type="text" id="username" name="username" [(ngModel)]="instance.username" class="form-control">
+          <input type="text" id="username" name="username" [(ngModel)]="instance.username" class="form-control" autocomplete="username">
           <button class="btn btn-outline-secondary" type="button" [ngbPopover]="usernameHelp"><i class="bi bi-question"></i></button>
           <ng-template #usernameHelp>Username of the Fusio instance</ng-template>
         </div>
@@ -32,7 +32,7 @@
       <label for="password" class="col-lg-2 col-form-label fw-bold">Password</label>
       <div class="col-lg-10">
         <div class="input-group">
-          <input type="password" id="password" name="password" [(ngModel)]="instance.password" class="form-control">
+          <input type="password" id="password" name="password" [(ngModel)]="instance.password" class="form-control" autocomplete="current-password">
           <button class="btn btn-outline-secondary" type="button" [ngbPopover]="passwordHelp"><i class="bi bi-question"></i></button>
           <ng-template #passwordHelp>Password of the Fusio instance</ng-template>
         </div>

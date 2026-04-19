@@ -14,7 +14,7 @@
     <label for="name" class="col-lg-2 col-form-label fw-bold">Name</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="text" id="name" name="name" [(ngModel)]="entity.name" [disabled]="isDisabled()" class="form-control">
+        <input type="text" id="name" name="name" [(ngModel)]="entity.name" [disabled]="isDisabled()" class="form-control" autocomplete="off">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="nameHelp"><i class="bi bi-question"></i></button>
         <ng-template #nameHelp>Unique name of the operation i.e. <code>My.Awesome.Operation.execute</code></ng-template>
       </div>
@@ -30,7 +30,7 @@
     <div class="col-lg-2 col-form-label fw-bold">Active</div>
     <div class="col-lg-10">
       <div class="form-check form-switch">
-        <input type="checkbox" id="active" name="active" [(ngModel)]="entity.active" [disabled]="isDisabled()" class="form-check-input" aria-label="Active">
+        <input type="checkbox" id="active" name="active" [(ngModel)]="entity.active" [disabled]="isDisabled()" class="form-check-input" aria-label="Active" autocomplete="off">
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
     <div class="col-lg-2 col-form-label fw-bold">Public</div>
     <div class="col-lg-10">
       <div class="form-check form-switch">
-        <input type="checkbox" id="public" name="public" [(ngModel)]="entity.public" [disabled]="isDisabled()" class="form-check-input" aria-label="Public">
+        <input type="checkbox" id="public" name="public" [(ngModel)]="entity.public" [disabled]="isDisabled()" class="form-check-input" aria-label="Public" autocomplete="off">
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
     <label for="usability" class="col-lg-2 col-form-label fw-bold">Usability</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <select id="usability" name="usability" [(ngModel)]="entity.usability" [disabled]="isDisabled()" class="form-select">
+        <select id="usability" name="usability" [(ngModel)]="entity.usability" [disabled]="isDisabled()" class="form-select" autocomplete="off">
           <option *ngFor="let u of usabilities" [ngValue]="u.key">{{u.value}}</option>
         </select>
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="usabilityHelp"><i class="bi bi-question"></i></button>
@@ -58,7 +58,7 @@
     <label for="stability" class="col-lg-2 col-form-label fw-bold">Stability</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <select id="stability" name="stability" [(ngModel)]="entity.stability" class="form-select">
+        <select id="stability" name="stability" [(ngModel)]="entity.stability" class="form-select" autocomplete="off">
           <option *ngFor="let stability of stabilities" [ngValue]="stability.key">{{stability.value}}</option>
         </select>
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="stabilityHelp"><i class="bi bi-question"></i></button>
@@ -70,7 +70,7 @@
     <label for="description" class="col-lg-2 col-form-label fw-bold">Description</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="text" id="description" name="description" [(ngModel)]="entity.description" [disabled]="isDisabled()" class="form-control">
+        <input type="text" id="description" name="description" [(ngModel)]="entity.description" [disabled]="isDisabled()" class="form-control" autocomplete="off">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="descriptionHelp"><i class="bi bi-question"></i></button>
         <ng-template #descriptionHelp>A short description of the operation</ng-template>
       </div>
@@ -80,7 +80,7 @@
     <label for="httpMethod" class="col-lg-2 col-form-label fw-bold">HTTP-Method</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <select id="httpMethod" name="httpMethod" [(ngModel)]="entity.httpMethod" (ngModelChange)="changeHttpMethod()" [disabled]="isDisabled()" class="form-select">
+        <select id="httpMethod" name="httpMethod" [(ngModel)]="entity.httpMethod" (ngModelChange)="changeHttpMethod()" [disabled]="isDisabled()" class="form-select" autocomplete="off">
           <option *ngFor="let method of methods" [ngValue]="method.key">{{method.value}}</option>
         </select>
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="httpMethodHelp"><i class="bi bi-question"></i></button>
@@ -92,7 +92,7 @@
     <label for="httpPath" class="col-lg-2 col-form-label fw-bold">HTTP-Path</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="text" id="httpPath" name="httpPath" [(ngModel)]="entity.httpPath" [disabled]="isDisabled()" class="form-control">
+        <input type="text" id="httpPath" name="httpPath" [(ngModel)]="entity.httpPath" [disabled]="isDisabled()" class="form-control" autocomplete="off">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="httpPathHelp"><i class="bi bi-question"></i></button>
         <ng-template #httpPathHelp>The assigned HTTP path for this operation i.e. <code>/acme/news</code>. It is possible to use variable path fragments i.e. <code>/acme/:news</code>. Click <a href="https://docs.fusio-project.org/docs/backend/api/operation/#http-path">here</a> for more information</ng-template>
       </div>
@@ -102,7 +102,7 @@
     <label for="httpCode" class="col-lg-2 col-form-label fw-bold">HTTP-Code</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <select id="httpCode" name="httpCode" [(ngModel)]="entity.httpCode" [disabled]="isDisabled()" class="form-select">
+        <select id="httpCode" name="httpCode" [(ngModel)]="entity.httpCode" [disabled]="isDisabled()" class="form-select" autocomplete="off">
           <option *ngFor="let code of successStatusCodes" [ngValue]="code.key">{{code.value}}</option>
         </select>
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="httpCodeHelp"><i class="bi bi-question"></i></button>
@@ -144,7 +144,7 @@
     <label for="costs" class="col-lg-2 col-form-label fw-bold">Costs</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="number" id="costs" name="costs" [(ngModel)]="entity.costs" [disabled]="isDisabled()" class="form-control">
+        <input type="number" id="costs" name="costs" [(ngModel)]="entity.costs" [disabled]="isDisabled()" class="form-control" autocomplete="off">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="costsHelp"><i class="bi bi-question"></i></button>
         <ng-template #costsHelp>The amount of points a user needs to pay to invoke this operation</ng-template>
       </div>

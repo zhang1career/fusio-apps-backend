@@ -32,12 +32,12 @@
           role="img"></i>
         <i
           class="bi fusio-operation-status-icon"
-          [ngClass]="entry.public === true ? 'bi-eye-fill text-primary' : 'bi-shield-lock-fill text-secondary'"
+          [ngClass]="entry.public === true ? 'bi-eye-fill fusio-status-on' : 'bi-eye-fill fusio-status-off'"
           [attr.title]="entry.public === true ? 'Public' : 'Private'"
           role="img"></i>
         <i
           class="bi fusio-operation-status-icon"
-          [ngClass]="entry.usability === 1 ? 'bi-box-arrow-up-right text-dark' : 'bi-house-door-fill text-secondary'"
+          [ngClass]="entry.usability === 1 ? 'bi-house-fill text-danger' : 'bi-house-fill text-success'"
           [attr.title]="entry.usability === 1 ? 'External — user center JWT' : 'Internal — Fusio token & scopes'"
           role="img"></i>
       </span>

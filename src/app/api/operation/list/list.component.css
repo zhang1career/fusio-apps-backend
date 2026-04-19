@@ -10,6 +10,25 @@
 }
 
 .fusio-operation-status-icon {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1;
+}
+
+/* Same glyph for on/off; color distinguishes state (readable in dark theme) */
+.fusio-status-on {
+  color: var(--bs-primary);
+}
+
+.fusio-status-off {
+  color: var(--bs-secondary-color);
+  opacity: 0.75;
+}
+
+[data-bs-theme="dark"] .fusio-status-on {
+  color: var(--bs-info);
+}
+
+[data-bs-theme="dark"] .fusio-status-off {
+  color: var(--bs-secondary-color);
+  opacity: 0.9;
 }
