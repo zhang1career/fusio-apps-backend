@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:fusio": "bash scripts/deploy-to-fusio.sh"
   },
   "private": true,
   "dependencies": {

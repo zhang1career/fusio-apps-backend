@@ -23,11 +23,24 @@
   </thead>
   <tbody>
   <tr *ngFor="let entry of entries">
-    <td>
-      <span *ngIf="entry.active === true" class="badge bg-success fusio-operation-active me-1">Active</span>
-      <span *ngIf="entry.active !== true" class="badge bg-secondary fusio-operation-active me-1">Inactive</span>
-      <span *ngIf="entry.public === true" class="badge bg-primary fusio-operation-public">Public</span>
-      <span *ngIf="entry.public !== true" class="badge bg-info fusio-operation-public">Private</span>
+    <td class="fusio-operation-status-cell">
+      <span class="fusio-operation-status-icons" role="group" [attr.aria-label]="'Active: ' + (entry.active === true ? 'yes' : 'no') + ', Public: ' + (entry.public === true ? 'yes' : 'no') + ', Usability: ' + (entry.usability === 1 ? 'external' : 'internal')">
+        <i
+          class="bi fusio-operation-status-icon"
+          [ngClass]="entry.active === true ? 'bi-lightbulb-fill text-success' : 'bi-lightbulb-off text-secondary'"
+          [attr.title]="entry.active === true ? 'Active' : 'Inactive'"
+          role="img"></i>
+        <i
+          class="bi fusio-operation-status-icon"
+          [ngClass]="entry.public === true ? 'bi-eye-fill fusio-status-on' : 'bi-eye-fill fusio-status-off'"
+          [attr.title]="entry.public === true ? 'Public' : 'Private'"
+          role="img"></i>
+        <i
+          class="bi fusio-operation-status-icon"
+          [ngClass]="entry.usability === 1 ? 'bi-house-fill text-danger' : 'bi-house-fill text-success'"
+          [attr.title]="entry.usability === 1 ? 'External — user center JWT' : 'Internal — Fusio token & scopes'"
+          role="img"></i>
+      </span>
     </td>
     <td><code>{{entry.name}}</code></td>
     <td><span class="badge text-bg-dark fusio-operation-http-method me-1">{{entry.httpMethod}}</span></td>

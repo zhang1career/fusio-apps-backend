@@ -11,10 +11,10 @@
 
 <form *ngIf="entity">
   <div class="mb-3 row">
-    <label for="endpoint" class="col-lg-2 col-form-label fw-bold">Name</label>
+    <label for="name" class="col-lg-2 col-form-label fw-bold">Name</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="url" id="name" name="name" [(ngModel)]="entity.name" [disabled]="mode === 3" class="form-control">
+        <input type="url" id="name" name="name" [(ngModel)]="entity.name" [disabled]="mode === 3" class="form-control" autocomplete="off">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="nameHelp"><i class="bi bi-question"></i></button>
         <ng-template #nameHelp>The name of the webhook</ng-template>
       </div>
@@ -39,7 +39,7 @@
     <label for="endpoint" class="col-lg-2 col-form-label fw-bold">Endpoint</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="url" id="endpoint" name="endpoint" [(ngModel)]="entity.endpoint" [disabled]="mode === 3" class="form-control">
+        <input type="url" id="endpoint" name="endpoint" [(ngModel)]="entity.endpoint" [disabled]="mode === 3" class="form-control" autocomplete="url">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="endpointHelp"><i class="bi bi-question"></i></button>
         <ng-template #endpointHelp>The endpoint which receives the webhook</ng-template>
       </div>

@@ -15,25 +15,25 @@
     <div class="col-lg-10">
       <ng-container [ngSwitch]="entity.type">
         <div class="input-group" *ngSwitchCase="1">
-          <input type="text" name="value" [(ngModel)]="entity.value" class="form-control">
+          <input type="text" id="value" name="value" [(ngModel)]="entity.value" class="form-control" autocomplete="off">
         </div>
         <div class="form-check form-switch" *ngSwitchCase="2">
-          <input type="checkbox" name="value" [(ngModel)]="entity.value" class="form-check-input">
+          <input type="checkbox" id="value" name="value" [(ngModel)]="entity.value" class="form-check-input" autocomplete="off">
         </div>
         <div class="input-group" *ngSwitchCase="3">
-          <input type="number" name="value" [(ngModel)]="entity.value" class="form-control">
+          <input type="number" id="value" name="value" [(ngModel)]="entity.value" class="form-control" autocomplete="off">
         </div>
         <div class="input-group" *ngSwitchCase="4">
-          <input type="datetime-local" name="value" [(ngModel)]="entity.value" class="form-control">
+          <input type="datetime-local" id="value" name="value" [(ngModel)]="entity.value" class="form-control" autocomplete="off">
         </div>
         <div class="input-group" *ngSwitchCase="5">
-          <input type="email" name="value" [(ngModel)]="entity.value" class="form-control">
+          <input type="email" id="value" name="value" [(ngModel)]="entity.value" class="form-control" autocomplete="email">
         </div>
         <div class="input-group" *ngSwitchCase="6">
-          <textarea name="value" [(ngModel)]="entity.value" rows="16" class="form-control"></textarea>
+          <textarea id="value" name="value" [(ngModel)]="entity.value" rows="16" class="form-control" autocomplete="off"></textarea>
         </div>
         <div class="input-group" *ngSwitchCase="7">
-          <input type="password" name="value" [(ngModel)]="entity.value" class="form-control">
+          <input type="password" id="value" name="value" [(ngModel)]="entity.value" class="form-control" autocomplete="new-password">
         </div>
       </ng-container>
     </div>

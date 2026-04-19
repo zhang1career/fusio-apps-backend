@@ -1,0 +1,34 @@
+.fusio-operation-status-cell {
+  vertical-align: middle;
+}
+
+.fusio-operation-status-icons {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fusio-operation-status-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Same glyph for on/off; color distinguishes state (readable in dark theme) */
+.fusio-status-on {
+  color: var(--bs-primary);
+}
+
+.fusio-status-off {
+  color: var(--bs-secondary-color);
+  opacity: 0.75;
+}
+
+[data-bs-theme="dark"] .fusio-status-on {
+  color: var(--bs-info);
+}
+
+[data-bs-theme="dark"] .fusio-status-off {
+  color: var(--bs-secondary-color);
+  opacity: 0.9;
+}

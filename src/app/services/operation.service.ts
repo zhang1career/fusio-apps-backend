@@ -42,6 +42,7 @@ export class OperationService extends Service<BackendOperation> {
       name: '',
       active: true,
       public: false,
+      usability: 0,
       stability: 1,
       httpMethod: 'GET',
       httpPath: '',

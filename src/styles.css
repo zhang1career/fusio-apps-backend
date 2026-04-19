@@ -19,8 +19,7 @@ pre
 
 .fusio-header-profile
 {
-  float:right;
-  margin-top:2px;
+  margin-top:0;
 }
 
 #userMenu,
@@ -479,4 +478,67 @@ pre
 
 .psx-property-required {
   border-bottom:1px dotted #999;
+}
+
+/* ---------- color theme (Bootstrap 5.3 data-bs-theme + legacy Fusio layout) ---------- */
+
+[data-bs-theme="dark"] body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .fusio-content {
+  background-color: var(--bs-body-bg);
+}
+
+[data-bs-theme="dark"] .fusio-content > * > h1 {
+  color: var(--bs-emphasis-color);
+  border-bottom-color: var(--bs-border-color);
+  background-color: var(--bs-secondary-bg);
+  background-image: none;
+}
+
+[data-bs-theme="dark"] .fusio-content > * > h1 > a {
+  color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] #userMenu,
+[data-bs-theme="dark"] #userMenu:hover {
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .fusio-instance {
+  background-color: var(--bs-secondary-bg);
+  border-right-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .fusio-grid {
+  border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .fusio-grid > table > thead > tr > th {
+  color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="dark"] .fusio-search .table td {
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .ace_editor {
+  border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .psx-object {
+  border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .psx-object > h1 {
+  color: var(--bs-emphasis-color);
+  border-bottom-color: var(--bs-border-color);
+  background-color: var(--bs-secondary-bg);
+  background-image: none;
+}
+
+[data-bs-theme="dark"] .psx-object-json {
+  background-color: rgba(255, 255, 255, 0.04);
 }

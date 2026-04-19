@@ -1,5 +1,17 @@
 /// <reference types="@angular/localize" />
 
+(() => {
+  try {
+    const saved = localStorage.getItem('fusio-theme');
+    document.documentElement.setAttribute(
+      'data-bs-theme',
+      saved === 'dark' ? 'dark' : 'light',
+    );
+  } catch {
+    document.documentElement.setAttribute('data-bs-theme', 'light');
+  }
+})();
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

@@ -14,7 +14,7 @@
     <label for="status" class="col-lg-2 col-form-label fw-bold">Status</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <select id="status" name="status" [(ngModel)]="entity.status" [disabled]="mode === 3" class="form-select">
+        <select id="status" name="status" [(ngModel)]="entity.status" [disabled]="mode === 3" class="form-select" autocomplete="off">
           <option *ngFor="let status of status" [ngValue]="status.key">{{status.value}}</option>
         </select>
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="statusHelp"><i class="bi bi-question"></i></button>
@@ -35,7 +35,7 @@
     <label for="name" class="col-lg-2 col-form-label fw-bold">Name</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="text" id="name" name="name" [(ngModel)]="entity.name" [disabled]="mode === 3" class="form-control">
+        <input type="text" id="name" name="name" [(ngModel)]="entity.name" [disabled]="mode === 3" class="form-control" autocomplete="nickname">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="nameHelp"><i class="bi bi-question"></i></button>
         <ng-template #nameHelp>Unique name of the user</ng-template>
       </div>
@@ -45,7 +45,7 @@
     <label for="email" class="col-lg-2 col-form-label fw-bold">Email</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="email" id="email" name="email" [(ngModel)]="entity.email" [disabled]="mode === 3" class="form-control">
+        <input type="email" id="email" name="email" [(ngModel)]="entity.email" [disabled]="mode === 3" class="form-control" autocomplete="email">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="emailHelp"><i class="bi bi-question"></i></button>
         <ng-template #emailHelp>Unique email assigned to the user</ng-template>
       </div>
@@ -55,7 +55,7 @@
     <label for="password" class="col-lg-2 col-form-label fw-bold">Password</label>
     <div class="col-lg-10">
       <div class="input-group">
-        <input type="password" id="password" name="password" [(ngModel)]="entity.password" class="form-control">
+        <input type="password" id="password" name="password" [(ngModel)]="entity.password" class="form-control" autocomplete="new-password">
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="passwordHelp"><i class="bi bi-question"></i></button>
         <ng-template #passwordHelp>Password for this user</ng-template>
       </div>
