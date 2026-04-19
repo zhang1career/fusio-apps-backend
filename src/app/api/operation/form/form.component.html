@@ -27,18 +27,18 @@
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="active" class="col-lg-2 col-form-label fw-bold">Active</label>
+    <div class="col-lg-2 col-form-label fw-bold">Active</div>
     <div class="col-lg-10">
       <div class="form-check form-switch">
-        <input type="checkbox" id="active" name="active" [(ngModel)]="entity.active" [disabled]="isDisabled()" class="form-check-input">
+        <input type="checkbox" id="active" name="active" [(ngModel)]="entity.active" [disabled]="isDisabled()" class="form-check-input" aria-label="Active">
       </div>
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="public" class="col-lg-2 col-form-label fw-bold">Public</label>
+    <div class="col-lg-2 col-form-label fw-bold">Public</div>
     <div class="col-lg-10">
       <div class="form-check form-switch">
-        <input type="checkbox" id="public" name="public" [(ngModel)]="entity.public" [disabled]="isDisabled()" class="form-check-input">
+        <input type="checkbox" id="public" name="public" [(ngModel)]="entity.public" [disabled]="isDisabled()" class="form-check-input" aria-label="Public">
       </div>
     </div>
   </div>
@@ -111,19 +111,19 @@
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="parameters" class="col-lg-2 col-form-label fw-bold">Parameters</label>
+    <label for="parameters_name" class="col-lg-2 col-form-label fw-bold">Parameters</label>
     <div class="col-lg-10">
-      <app-operation-parameters [data]="entity.parameters" (dataChange)="entity.parameters = $event" [disabled]="isDisabled()"></app-operation-parameters>
+      <app-operation-parameters name="parameters" [data]="entity.parameters" (dataChange)="entity.parameters = $event" [disabled]="isDisabled()"></app-operation-parameters>
     </div>
   </div>
   <div class="mb-3 row" *ngIf="entity.httpMethod !== 'GET' && entity.httpMethod !== 'DELETE'">
-    <label for="incoming" class="col-lg-2 col-form-label fw-bold">Incoming</label>
+    <label for="incoming_scheme" class="col-lg-2 col-form-label fw-bold">Incoming</label>
     <div class="col-lg-10">
       <app-schema-selector name="incoming" [data]="entity.incoming" (dataChange)="entity.incoming = $event" [disabled]="isDisabled()"></app-schema-selector>
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="outgoing" class="col-lg-2 col-form-label fw-bold">Outgoing</label>
+    <label for="outgoing_scheme" class="col-lg-2 col-form-label fw-bold">Outgoing</label>
     <div class="col-lg-10">
       <app-schema-selector name="outgoing" [data]="entity.outgoing" (dataChange)="entity.outgoing = $event" [disabled]="isDisabled()"></app-schema-selector>
     </div>
@@ -135,7 +135,7 @@
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="action" class="col-lg-2 col-form-label fw-bold">Action</label>
+    <label for="action_scheme" class="col-lg-2 col-form-label fw-bold">Action</label>
     <div class="col-lg-10">
       <app-action-selector name="action" [data]="entity.action" (dataChange)="entity.action = $event" [disabled]="isDisabled()"></app-action-selector>
     </div>

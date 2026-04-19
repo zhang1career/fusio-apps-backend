@@ -15,14 +15,13 @@
             </div>
           </div>
           <div class="form-check form-switch fusio-theme-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="fusioThemeSwitch"
-              [(ngModel)]="darkMode"
-              (ngModelChange)="setDarkMode($event)"
-              [attr.aria-label]="darkMode ? 'Switch to light theme' : 'Switch to dark theme'">
-            <label class="form-check-label fusio-theme-switch-label" for="fusioThemeSwitch" [title]="darkMode ? 'Dark theme' : 'Light theme'">
+            <label class="form-check-label fusio-theme-switch-label mb-0 d-inline-flex align-items-center gap-2" [title]="darkMode ? 'Dark theme' : 'Light theme'">
+              <input
+                class="form-check-input m-0"
+                type="checkbox"
+                [(ngModel)]="darkMode"
+                (ngModelChange)="setDarkMode($event)"
+                [attr.aria-label]="darkMode ? 'Switch to light theme' : 'Switch to dark theme'">
               <span class="visually-hidden">Color theme</span>
               <i class="bi" [ngClass]="darkMode ? 'bi-moon-stars-fill' : 'bi-sun-fill'" aria-hidden="true"></i>
             </label>
