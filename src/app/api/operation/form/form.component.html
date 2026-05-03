@@ -123,6 +123,13 @@
     </div>
   </div>
   <div class="mb-3 row">
+    <label class="col-lg-2 col-form-label fw-bold">Response Headers</label>
+    <div class="col-lg-10">
+      <app-map name="responseHeaders" keyColumnGrid="col-lg-4" valueColumnGrid="col-lg-8" [data]="entity.responseHeaders || {}" (dataChange)="entity.responseHeaders = $event" [disabled]="isDisabled()"></app-map>
+      <div class="form-text">Headers configured here force-override same-named headers on the outgoing response (OPTIONS / 200 / errors). Common use case: CORS (e.g. <code>Access-Control-Allow-Origin</code>) or <code>Cache-Control</code>.</div>
+    </div>
+  </div>
+  <div class="mb-3 row">
     <label for="outgoing_scheme" class="col-lg-2 col-form-label fw-bold">Outgoing</label>
     <div class="col-lg-10">
       <app-schema-selector name="outgoing" [data]="entity.outgoing" (dataChange)="entity.outgoing = $event" [disabled]="isDisabled()"></app-schema-selector>
@@ -148,13 +155,6 @@
         <button class="btn btn-outline-secondary" type="button" [ngbPopover]="costsHelp"><i class="bi bi-question"></i></button>
         <ng-template #costsHelp>The amount of points a user needs to pay to invoke this operation</ng-template>
       </div>
-    </div>
-  </div>
-  <div class="mb-3 row">
-    <label class="col-lg-2 col-form-label fw-bold">Response Headers</label>
-    <div class="col-lg-10">
-      <app-map name="responseHeaders" [data]="entity.responseHeaders || {}" (dataChange)="entity.responseHeaders = $event" [disabled]="isDisabled()"></app-map>
-      <div class="form-text">Headers configured here force-override same-named headers on the outgoing response (OPTIONS / 200 / errors). Common use case: CORS (e.g. <code>Access-Control-Allow-Origin</code>) or <code>Cache-Control</code>.</div>
     </div>
   </div>
   <div class="btn-group" role="group">

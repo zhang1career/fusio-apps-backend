@@ -87,6 +87,25 @@
       <div class="col-lg-2 fw-bold">Incoming</div>
       <div class="col-lg-10"><span class="fusio-operation-incoming"><app-schema-link [data]="selected.incoming"></app-schema-link></span></div>
     </div>
+    <div class="row" *ngIf="selected.responseHeaders && (selected.responseHeaders | keyvalue).length > 0">
+      <div class="col-lg-2 fw-bold">Response Headers</div>
+      <div class="col-lg-10">
+        <table class="table fusio-operation-response-headers">
+          <thead>
+          <tr>
+            <th style="width:60%">Name</th>
+            <th>Value</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let entry of selected.responseHeaders | keyvalue">
+            <td><code>{{entry.key}}</code></td>
+            <td>{{entry.value}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-2 fw-bold">Outgoing</div>
       <div class="col-lg-10"><span class="fusio-operation-outgoing"><app-schema-link [data]="selected.outgoing"></app-schema-link></span></div>
@@ -117,25 +136,6 @@
     <div class="row">
       <div class="col-lg-2 fw-bold">Costs</div>
       <div class="col-lg-10"><span class="fusio-operation-costs align-middle">{{selected.costs}}</span></div>
-    </div>
-    <div class="row" *ngIf="selected.responseHeaders && (selected.responseHeaders | keyvalue).length > 0">
-      <div class="col-lg-2 fw-bold">Response Headers</div>
-      <div class="col-lg-10">
-        <table class="table fusio-operation-response-headers">
-          <thead>
-          <tr>
-            <th style="width:30%">Name</th>
-            <th>Value</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let entry of selected.responseHeaders | keyvalue">
-            <td><code>{{entry.key}}</code></td>
-            <td>{{entry.value}}</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   </div>
   <div class="fusio-json" *ngIf="jsonView">

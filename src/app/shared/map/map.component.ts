@@ -11,6 +11,8 @@ export class MapComponent implements OnInit {
   @Input() type: string = 'text';
   @Input() data: Record<string, any> = {};
   @Input() disabled: boolean = false;
+  @Input() keyColumnGrid: string = 'col-lg-2';
+  @Input() valueColumnGrid: string = 'col-lg-10';
   @Output() dataChange = new EventEmitter<Record<string, any>>();
 
   local: Array<Entry> = [];
